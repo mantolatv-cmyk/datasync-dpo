@@ -113,7 +113,7 @@ const Services = () => {
            </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', gap: '32px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '32px' }}>
           {services.map((service, index) => (
             <MagicCard key={index} index={index}>
               <div style={{ 

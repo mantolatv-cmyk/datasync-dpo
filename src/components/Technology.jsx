@@ -72,7 +72,7 @@ const Technology = () => {
               Transformamos obrigações em eficiência operacional. Através de nossa metodologia de PrivacyOps, integramos dashboards modernos e automação de workflow aos seus processos.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }} className="tech-features">
               <div style={{ display: 'flex', gap: '16px' }}>
                 <Cloud color="var(--accent-cyan)" />
                 <div>
@@ -95,6 +95,7 @@ const Technology = () => {
       <style>{`
         @media (max-width: 992px) {
           .tech-split { grid-template-columns: 1fr !important; gap: 60px !important; }
+          .tech-features { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

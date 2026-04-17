@@ -99,11 +99,11 @@ const Hero = () => {
               Blindamos operações B2B complexas com engenharia jurídica sênior e automação de última geração. Sua conformidade como ativo estratégico.
             </p>
             
-            <div style={{ display: 'flex', gap: '20px' }}>
-              <RefinedButton variant="primary">
+            <div style={{ display: 'flex', gap: '20px' }} className="hero-btns">
+              <RefinedButton variant="primary" className="hero-btn">
                 Agendar Avaliação <ChevronRight size={18} />
               </RefinedButton>
-              <RefinedButton variant="outline">
+              <RefinedButton variant="outline" className="hero-btn">
                 Ver Plataforma
               </RefinedButton>
             </div>
@@ -173,10 +173,15 @@ const Hero = () => {
 
       <style>{`
         @media (max-width: 1024px) {
-          .hero-title { font-size: 3.5rem !important; }
+          .hero-title { font-size: 3rem !important; }
           .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
           .hero-grid p { margin-left: auto; margin-right: auto; }
           .hero-grid div { justify-content: center; }
+          .hero-btns { flex-direction: column !important; width: 100%; max-width: 400px; margin: 0 auto; }
+          .hero-btn { width: 100% !important; }
+        }
+        @media (max-width: 480px) {
+          .hero-title { font-size: 2.8rem !important; }
         }
       `}</style>
     </section>

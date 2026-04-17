@@ -95,13 +95,14 @@ const Navbar = () => {
               border: 'none', 
               color: '#FFF', 
               cursor: 'pointer',
-              width: '40px',
-              height: '40px',
-              borderRadius: '10px',
+              width: '44px',
+              height: '44px',
+              borderRadius: '12px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              display: 'none'
+              position: 'relative',
+              zIndex: 101,
             }}
             className="mobile-toggle"
           >
@@ -109,6 +110,67 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              background: 'rgba(2, 6, 9, 0.98)',
+              backdropFilter: 'blur(10px)',
+              zIndex: 100,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '30px'
+            }}
+          >
+            {navLinks.map((link, idx) => (
+              <motion.a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                style={{
+                  fontSize: '2rem',
+                  fontWeight: 700,
+                  color: '#FFF',
+                  textDecoration: 'none',
+                  fontFamily: 'var(--font-heading)'
+                }}
+              >
+                {link.name}
+              </motion.a>
+            ))}
+            <motion.button 
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               transition={{ delay: 0.6 }}
+               style={{ 
+                 marginTop: '20px',
+                 background: 'var(--accent-cyan)', 
+                 color: '#000',
+                 padding: '16px 40px',
+                 borderRadius: '12px',
+                 fontWeight: 800,
+                 border: 'none',
+                 fontSize: '1.2rem'
+               }}
+            >
+              Portal
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style>{`
         .nav-link:hover { color: #FFF !important; }

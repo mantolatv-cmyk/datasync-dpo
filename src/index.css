@@ -85,6 +85,12 @@ h1, h2, h3, h4 {
   padding: 0 2.5rem;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
 .glass {
   background: var(--bg-panel);
   backdrop-filter: blur(16px);
@@ -139,6 +145,12 @@ h1, h2, h3, h4 {
 
 section {
   padding: 120px 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 80px 0;
+  }
 }
 
 /* Button Refinements */
