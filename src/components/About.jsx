@@ -1,0 +1,73 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Users2, Scale, Terminal, Workflow } from 'lucide-react';
+
+const About = () => {
+  const highlights = [
+    { icon: <Scale size={20} />, label: "Direito Digital" },
+    { icon: <Terminal size={20} />, label: "Security Engineering" },
+    { icon: <Workflow size={20} />, label: "Gestão de Processos" },
+  ];
+
+  return (
+    <section id="about" style={{ background: 'var(--bg-surface)' }}>
+      <div className="container">
+        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 400px) 1fr', gap: '80px', alignItems: 'center' }} className="about-split">
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            style={{ 
+              height: '400px', 
+              background: 'linear-gradient(225deg, var(--bg-deep) 0%, #1a2635 100%)', 
+              borderRadius: '40px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+              border: '1px solid var(--border-glass)'
+            }}
+          >
+            <Users2 size={120} color="var(--accent-cyan)" style={{ opacity: 0.5 }} />
+            <div style={{ position: 'absolute', bottom: '30px', left: '30px', right: '30px' }} className="glass">
+               <div style={{ padding: '20px', display: 'flex', gap: '15px', flexWrap: 'wrap', justifyContent: 'center' }}>
+                 {highlights.map((h, i) => (
+                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', color: 'var(--accent-cyan)', fontWeight: 600 }}>
+                     {h.icon} {h.label}
+                   </div>
+                 ))}
+               </div>
+            </div>
+          </motion.div>
+
+          <div>
+             <h2 style={{ fontSize: '2.5rem', marginBottom: '32px' }}>Multidisciplinaridade no <span className="text-gradient">DNA.</span></h2>
+             <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '32px' }}>
+               A DataSync nasceu na intersecção entre o rigor do Direito Digital e a precisão da Engenharia de Dados. 
+               Nossa equipe é composta por especialistas sêniores, engenheiros de segurança e gestores de processos 
+               dedicados a transformar a conformidade em uma vantagem competitiva sustentável.
+             </p>
+             <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '40px' }}>
+               Não focado apenas em advogados, mas na união equilibrada de competências que garantem uma governança 
+               real e operativa para grandes players do mercado B2B.
+             </p>
+             
+             <div style={{ padding: '24px', borderLeft: '4px solid var(--accent-green)', background: 'rgba(57, 255, 20, 0.05)', borderRadius: '0 12px 12px 0' }}>
+               <h4 style={{ color: 'var(--accent-green)', marginBottom: '8px' }}>Sustentabilidade Digital</h4>
+               <p style={{ fontSize: '0.95rem', color: 'var(--text-primary)' }}>Integridade de dados como pilar do valor comercial da sua empresa.</p>
+             </div>
+          </div>
+
+        </div>
+      </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .about-split { grid-template-columns: 1fr !important; gap: 40px !important; }
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default About;
