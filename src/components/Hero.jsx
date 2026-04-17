@@ -139,7 +139,7 @@ const Hero = () => {
             >
               <img 
                 src={heroImage} 
-                alt="DataSync Interface" 
+                alt="Interface conceitual da plataforma DataSync PrivacyOps, exibindo métricas de conformidade e segurança." 
                 style={{ width: '100%', height: 'auto', display: 'block', transform: 'scale(1.01)' }} 
               />
               <div style={{ 
