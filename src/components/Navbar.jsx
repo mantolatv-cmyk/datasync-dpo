@@ -89,35 +89,6 @@ const Navbar = () => {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
           <button 
-            style={{ 
-              background: 'linear-gradient(135deg, rgba(0,242,255,0.1), transparent)', 
-              border: '1px solid var(--accent-cyan)', 
-              color: 'var(--accent-cyan)',
-              padding: '12px 28px',
-              borderRadius: '12px',
-              fontSize: '1rem',
-              fontWeight: 700,
-              cursor: 'pointer',
-              display: 'none',
-              textTransform: 'uppercase',
-              letterSpacing: '1px',
-              boxShadow: '0 0 20px rgba(0,242,255,0.2)',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.background = 'var(--accent-cyan)';
-              e.target.style.color = '#000';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = 'linear-gradient(135deg, rgba(0,242,255,0.1), transparent)';
-              e.target.style.color = 'var(--accent-cyan)';
-            }}
-            className="desktop-cta"
-          >
-            Portal
-          </button>
-          
-          <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             style={{ 
               background: 'rgba(255,255,255,0.05)', 
@@ -155,7 +126,6 @@ const Navbar = () => {
 
         @media (min-width: 768px) {
           .desktop-menu { display: flex !important; }
-          .desktop-cta { display: block !important; }
           .mobile-toggle { display: none !important; }
         }
         @media (max-width: 767px) {
