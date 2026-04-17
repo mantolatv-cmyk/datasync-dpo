@@ -47,15 +47,15 @@ const Navbar = () => {
           border: scrolled ? '1px solid rgba(255,255,255,0.08)' : '1px solid transparent'
         }}
       >
-        <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+        <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '16px', textDecoration: 'none' }}>
           <motion.div
             whileHover={{ rotate: 15, scale: 1.1 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
-            <Shield color="#00F2FF" size={32} />
+            <Shield color="#00F2FF" size={40} />
           </motion.div>
           <span style={{ 
-            fontSize: '1.5rem', 
+            fontSize: '1.8rem', 
             fontWeight: 800, 
             fontFamily: 'var(--font-heading)',
             color: '#FFF',
@@ -66,18 +66,19 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Links */}
-        <div style={{ display: 'none', gap: '40px' }} className="desktop-menu">
+        <div style={{ display: 'none', gap: '56px', marginLeft: '64px' }} className="desktop-menu">
            {navLinks.map((link) => (
              <a 
                key={link.name} 
                href={link.href}
                style={{ 
-                 color: 'var(--text-secondary)', 
+                 color: '#FFF', 
                  textDecoration: 'none',
-                 fontWeight: 500,
-                 fontSize: '0.9rem',
+                 fontWeight: 600,
+                 fontSize: '1.05rem',
                  transition: 'all 0.3s ease',
-                 position: 'relative'
+                 position: 'relative',
+                 letterSpacing: '0.02em'
                }}
                className="nav-link"
              >
@@ -86,18 +87,30 @@ const Navbar = () => {
            ))}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
           <button 
             style={{ 
-              background: 'transparent', 
-              border: '1px solid rgba(255,255,255,0.1)', 
-              color: '#FFF',
-              padding: '10px 20px',
-              borderRadius: '10px',
-              fontSize: '0.85rem',
-              fontWeight: 600,
+              background: 'linear-gradient(135deg, rgba(0,242,255,0.1), transparent)', 
+              border: '1px solid var(--accent-cyan)', 
+              color: 'var(--accent-cyan)',
+              padding: '12px 28px',
+              borderRadius: '12px',
+              fontSize: '1rem',
+              fontWeight: 700,
               cursor: 'pointer',
-              display: 'none'
+              display: 'none',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              boxShadow: '0 0 20px rgba(0,242,255,0.2)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = 'var(--accent-cyan)';
+              e.target.style.color = '#000';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = 'linear-gradient(135deg, rgba(0,242,255,0.1), transparent)';
+              e.target.style.color = 'var(--accent-cyan)';
             }}
             className="desktop-cta"
           >
