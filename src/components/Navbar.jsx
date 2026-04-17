@@ -39,11 +39,11 @@ const Navbar = () => {
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center',
-          padding: scrolled ? '12px 32px' : '0 32px',
+          padding: scrolled ? '12px 32px' : '0 48px',
           borderRadius: scrolled ? '20px' : '0',
           transition: 'all 0.5s ease',
           margin: scrolled ? '0 20px' : '0 auto',
-          maxWidth: scrolled ? '1100px' : '1300px',
+          maxWidth: scrolled ? '1200px' : '100%',
           border: scrolled ? '1px solid rgba(255,255,255,0.08)' : '1px solid transparent'
         }}
       >
