@@ -43,14 +43,14 @@ const About = () => {
 
           <div>
              <h2 style={{ fontSize: '2.5rem', marginBottom: '32px' }}>Multidisciplinaridade no <span className="text-gradient">DNA.</span></h2>
-             <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '32px' }}>
-               A DataSync nasceu na intersecção entre o rigor do Direito Digital e a precisão da Engenharia de Dados. 
-               Nossa equipe é composta por especialistas sêniores, engenheiros de segurança e gestores de processos 
-               dedicados a transformar a conformidade em uma vantagem competitiva sustentável.
+             <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '24px' }}>
+               A DataSync é fruto da visão compartilhada de seus fundadores: **Fernando**, especialista em TI e Engenharia de Segurança, e **Rafael**, jurista especializado em Direito Empresarial e Compliance.
+             </p>
+             <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '32px' }}>
+               Eles uniram forças ao perceberem que o mercado B2B carecia de uma solução que falasse simultaneamente a língua dos servidores e a dos tribunais. Fernando trouxe a precisão técnica da blindagem de dados, enquanto Rafael aportou o rigor estratégico do direito corporativo.
              </p>
              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '40px' }}>
-               Não focado apenas em advogados, mas na união equilibrada de competências que garantem uma governança 
-               real e operativa para grandes players do mercado B2B.
+               Juntos, transformaram essa intersecção no DNA da DataSync, oferecendo uma governança real que não apenas cumpre a lei, mas viabiliza contratos globais em cadeias de suprimentos complexas.
              </p>
              
              <div style={{ padding: '24px', borderLeft: '4px solid var(--accent-green)', background: 'rgba(57, 255, 20, 0.05)', borderRadius: '0 12px 12px 0' }}>
