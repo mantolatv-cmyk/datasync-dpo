@@ -56,9 +56,34 @@ const Contact = () => {
                 <textarea rows="4" placeholder="Como podemos ajudar sua operação hoje?" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border-glass)', padding: '14px', borderRadius: '8px', color: '#FFF', outline: 'none', resize: 'none' }}></textarea>
               </div>
               
-              <button type="button" className="btn-primary" style={{ marginTop: '10px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-                Solicitar Contato Executivo <Send size={18} />
-              </button>
+              <motion.button 
+                type="button" 
+                whileHover={{ scale: 1.02, boxShadow: '0 0 40px rgba(0, 242, 255, 0.6)' }}
+                whileTap={{ scale: 0.98 }}
+                style={{ 
+                  marginTop: '20px', 
+                  width: '100%', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  gap: '12px',
+                  background: 'linear-gradient(90deg, var(--accent-cyan), var(--accent-purple))',
+                  color: '#000',
+                  border: 'none',
+                  padding: '20px',
+                  borderRadius: '14px',
+                  fontSize: '1.2rem',
+                  fontWeight: 800,
+                  fontFamily: 'var(--font-heading)',
+                  cursor: 'pointer',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                  boxShadow: '0 0 20px rgba(0, 242, 255, 0.3)',
+                  transition: 'box-shadow 0.3s ease'
+                }}
+              >
+                Solicitar Contato Executivo <Send size={22} />
+              </motion.button>
             </form>
 
             <div style={{ marginTop: '40px', display: 'flex', justifyContent: 'center', gap: '20px', color: 'var(--text-dim)', fontSize: '0.9rem' }}>
