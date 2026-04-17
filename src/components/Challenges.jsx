@@ -70,7 +70,7 @@ const Challenges = () => {
                 </div>
                 <h3 style={{ marginBottom: '20px', fontSize: '1.8rem', fontWeight: 700 }}>Riscos de Cadeia B2B</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', lineHeight: '1.8' }}>
-                  Grandes corporações e players multinacionais estão restringindo parceiros que não demonstram governança de dados auditável. Não se trata de medo de multas, mas de **Sustentabilidade Comercial**.
+                  Grandes corporações e players multinacionais estão restringindo parceiros que não demonstram governança de dados auditável. Não se trata de medo de multas, mas de Sustentabilidade Comercial.
                 </p>
              </MagicCard>
              <MagicCard>
@@ -98,7 +98,7 @@ const Challenges = () => {
                 Inteligência <span className="text-gradient">Multidisciplinar.</span>
               </h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: '1.25rem', marginBottom: '40px', lineHeight: 1.7 }}>
-                O modelo **DPO as a Service** da DataSync elimina conflitos de interesse e integra a precisão técnica da segurança da informação ao rigor do direito regulatório.
+                O modelo DPO as a Service da DataSync elimina conflitos de interesse e integra a precisão técnica da segurança da informação ao rigor do direito regulatório.
               </p>
               
               <div style={{ display: 'grid', gap: '20px' }}>

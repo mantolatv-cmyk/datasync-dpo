@@ -44,7 +44,7 @@ const About = () => {
           <div>
              <h2 style={{ fontSize: '2.5rem', marginBottom: '32px' }}>Multidisciplinaridade no <span className="text-gradient">DNA.</span></h2>
              <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '24px' }}>
-               A DataSync é fruto da visão compartilhada de seus fundadores: **Fernando**, especialista em TI e Engenharia de Segurança, e **Rafael**, jurista especializado em Direito Empresarial e Compliance.
+               A DataSync é fruto da visão compartilhada de seus fundadores: Fernando, especialista em TI e Engenharia de Segurança, e Rafael, jurista especializado em Direito Empresarial e Compliance.
              </p>
              <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '32px' }}>
                Eles uniram forças ao perceberem que o mercado B2B carecia de uma solução que falasse simultaneamente a língua dos servidores e a dos tribunais. Fernando trouxe a precisão técnica da blindagem de dados, enquanto Rafael aportou o rigor estratégico do direito corporativo.

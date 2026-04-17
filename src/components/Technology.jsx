@@ -69,7 +69,7 @@ const Technology = () => {
             <div style={{ color: 'var(--accent-cyan)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.85rem', marginBottom: '20px' }}>O Diferencial Tech</div>
             <h2 style={{ fontSize: '3rem', marginBottom: '32px' }}>Privacidade Movida a <span className="text-gradient">Tecnologia.</span></h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '40px' }}>
-              Transformamos obrigações em eficiência operacional. Através de nossa metodologia de **PrivacyOps**, integramos dashboards modernos e automação de workflow aos seus processos.
+              Transformamos obrigações em eficiência operacional. Através de nossa metodologia de PrivacyOps, integramos dashboards modernos e automação de workflow aos seus processos.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
