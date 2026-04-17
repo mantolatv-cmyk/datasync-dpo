@@ -7,10 +7,12 @@ import Technology from './components/Technology';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Preloader from './components/Preloader';
 
 function App() {
   return (
     <div className="app-wrapper">
+      <Preloader />
       <Navbar />
       <main>
         <Hero />
