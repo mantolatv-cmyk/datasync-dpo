@@ -37,8 +37,8 @@ const Footer = () => {
             <ul style={{ listStyle: 'none', display: 'grid', gap: '12px' }}>
               <li><a href="#about" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem' }}>Sobre Nós</a></li>
               <li><a href="#home" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem' }}>PrivacyOps</a></li>
-              <li><a href="#contact" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem' }}>Portal do Cliente</a></li>
-              <li><a href="#contact" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem' }}>Carreiras</a></li>
+              <li><a href="https://datasync-portaldocliente.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-cyan)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600 }}>Portal do Cliente</a></li>
+              <li><a href="https://datasync-assincrono.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem' }}>Portal Assíncrono</a></li>
             </ul>
           </div>
 

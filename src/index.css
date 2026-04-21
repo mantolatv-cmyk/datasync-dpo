@@ -79,6 +79,13 @@ h1, h2, h3, h4 {
 }
 
 /* Layout Utilities */
+.fixed { position: fixed; }
+.absolute { position: absolute; }
+.top-0 { top: 0; }
+.left-0 { left: 0; }
+.right-0 { right: 0; }
+.z-50 { z-index: 50; }
+
 .container {
   max-width: 1300px;
   margin: 0 auto;

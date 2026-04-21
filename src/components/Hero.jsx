@@ -102,17 +102,21 @@ const Hero = () => {
             
             <div style={{ display: 'flex', gap: '24px' }} className="hero-btns">
               <Magnetic>
-                <RefinedButton variant="primary" className="hero-btn">
-                  Agendar Avaliação <ChevronRight size={18} />
+                <RefinedButton 
+                  variant="primary" 
+                  className="hero-btn"
+                  onClick={() => window.open('https://datasync-portaldocliente.vercel.app/', '_blank')}
+                >
+                  Portal do Cliente <ChevronRight size={18} />
                 </RefinedButton>
               </Magnetic>
               <Magnetic>
                 <RefinedButton 
                   variant="outline" 
                   className="hero-btn"
-                  onClick={() => window.open('https://datasync-portaldocliente.vercel.app/', '_blank')}
+                  onClick={() => window.open('https://datasync-assincrono.vercel.app/', '_blank')}
                 >
-                  Ver Plataforma
+                  Portal Assíncrono
                 </RefinedButton>
               </Magnetic>
             </div>

@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+      className={`absolute top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled ? 'py-4' : 'py-8'
       }`}
       style={{
@@ -43,11 +43,12 @@ const Navbar = () => {
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'center',
-          padding: scrolled ? '12px 32px' : '0 48px',
+          padding: scrolled ? '12px 40px' : '0 40px',
           borderRadius: scrolled ? '24px' : '0',
           transition: 'all 0.6s var(--spring-easing)',
           margin: scrolled ? '0 20px' : '0 auto',
-          maxWidth: scrolled ? '1200px' : '100%',
+          maxWidth: '100%',
+          width: '100%',
           border: scrolled ? '1px solid rgba(255,255,255,0.08)' : '1px solid transparent',
           boxShadow: scrolled ? '0 20px 40px rgba(0,0,0,0.4)' : 'none'
         }}
@@ -73,7 +74,7 @@ const Navbar = () => {
         </Magnetic>
 
         {/* Desktop Links */}
-        <div style={{ display: 'none', gap: '56px', marginLeft: '64px' }} className="desktop-menu">
+        <div style={{ display: 'none', gap: '40px', marginLeft: '64px' }} className="desktop-menu">
            {navLinks.map((link) => (
              <a 
                key={link.name} 
@@ -94,7 +95,44 @@ const Navbar = () => {
            ))}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginLeft: 'auto' }}>
+          <div style={{ display: 'none', gap: '12px' }} className="desktop-ctas">
+            <Magnetic>
+              <button 
+                onClick={() => window.open('https://datasync-portaldocliente.vercel.app/', '_blank')}
+                style={{ 
+                  background: 'var(--accent-cyan)', 
+                  color: '#000', 
+                  border: 'none', 
+                  padding: '10px 20px', 
+                  borderRadius: '10px', 
+                  fontWeight: 700, 
+                  fontSize: '0.9rem', 
+                  cursor: 'pointer' 
+                }}
+              >
+                Portal do Cliente
+              </button>
+            </Magnetic>
+            <Magnetic>
+              <button 
+                onClick={() => window.open('https://datasync-assincrono.vercel.app/', '_blank')}
+                style={{ 
+                  background: 'transparent', 
+                  color: '#FFF', 
+                  border: '1px solid var(--border-glass)', 
+                  padding: '10px 20px', 
+                  borderRadius: '10px', 
+                  fontWeight: 600, 
+                  fontSize: '0.9rem', 
+                  cursor: 'pointer' 
+                }}
+              >
+                Portal Assíncrono
+              </button>
+            </Magnetic>
+          </div>
+
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             style={{ 
@@ -162,6 +200,7 @@ const Navbar = () => {
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
                transition={{ delay: 0.6 }}
+               onClick={() => window.open('https://datasync-portaldocliente.vercel.app/', '_blank')}
                style={{ 
                  marginTop: '20px',
                  background: 'var(--accent-cyan)', 
@@ -170,10 +209,31 @@ const Navbar = () => {
                  borderRadius: '12px',
                  fontWeight: 800,
                  border: 'none',
-                 fontSize: '1.2rem'
+                 fontSize: '1.2rem',
+                 width: '80%',
+                 maxWidth: '300px'
                }}
             >
-              Portal
+              Portal do Cliente
+            </motion.button>
+            <motion.button 
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               transition={{ delay: 0.7 }}
+               onClick={() => window.open('https://datasync-assincrono.vercel.app/', '_blank')}
+               style={{ 
+                 background: 'transparent', 
+                 color: '#FFF',
+                 padding: '16px 40px',
+                 borderRadius: '12px',
+                 fontWeight: 700,
+                 border: '1px solid var(--border-glass)',
+                 fontSize: '1.2rem',
+                 width: '80%',
+                 maxWidth: '300px'
+               }}
+            >
+              Portal Assíncrono
             </motion.button>
           </motion.div>
         )}
@@ -193,11 +253,12 @@ const Navbar = () => {
         }
         .nav-link:hover::after { width: 100%; }
 
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
           .desktop-menu { display: flex !important; }
+          .desktop-ctas { display: flex !important; }
           .mobile-toggle { display: none !important; }
         }
-        @media (max-width: 767px) {
+        @media (max-width: 1023px) {
           .mobile-toggle { display: flex !important; }
         }
       `}</style>
