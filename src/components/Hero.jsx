@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import heroImage from '../assets/images/hero.png';
 import Magnetic from './Magnetic';
+import RefinedButton from './RefinedButton';
 import { ChevronRight } from 'lucide-react';
 
 const Hero = () => {
