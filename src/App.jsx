@@ -8,6 +8,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
+import FAQ from './components/FAQ';
+
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
         <Services />
         <Technology />
         <About />
+        <FAQ />
         <Contact />
+
       </main>
       <Footer />
     </div>
