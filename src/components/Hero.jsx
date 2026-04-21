@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import heroImage from '../assets/images/hero.png';
-import RefinedButton from './RefinedButton';
+import Magnetic from './Magnetic';
 import { ChevronRight } from 'lucide-react';
 
 const Hero = () => {
@@ -26,7 +26,7 @@ const Hero = () => {
         display: 'flex', 
         alignItems: 'center', 
         position: 'relative',
-        paddingTop: '140px',
+        paddingTop: '100px',
         overflow: 'hidden',
         '--mouse-x': `${mousePos.x}px`,
         '--mouse-y': `${mousePos.y}px`
@@ -38,7 +38,7 @@ const Hero = () => {
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(0, 242, 255, 0.08) 0%, transparent 80%)',
+          background: 'radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(0, 242, 255, 0.12) 0%, transparent 80%)',
           zIndex: 0,
           pointerEvents: 'none'
         }}
@@ -53,22 +53,22 @@ const Hero = () => {
         }}>
           
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             style={{ y: y1 }}
           >
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.3 }}
               style={{ 
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '10px',
                 padding: '8px 16px',
                 background: 'rgba(0, 242, 255, 0.05)',
-                border: '1px solid rgba(0, 242, 255, 0.1)',
+                border: '1px solid rgba(0, 242, 255, 0.15)',
                 borderRadius: '100px',
                 color: 'var(--accent-cyan)',
                 fontSize: '0.75rem',
@@ -89,8 +89,8 @@ const Hero = () => {
                 <motion.div 
                   initial={{ width: 0 }}
                   animate={{ width: '100%' }}
-                  transition={{ delay: 1, duration: 1 }}
-                  style={{ position: 'absolute', bottom: '10px', left: 0, height: '4px', background: 'var(--accent-cyan)', opacity: 0.2, borderRadius: '2px' }}
+                  transition={{ delay: 1, duration: 1.5 }}
+                  style={{ position: 'absolute', bottom: '10px', left: 0, height: '4px', background: 'var(--accent-cyan)', opacity: 0.3, borderRadius: '2px' }}
                 />
               </span>
             </h1>
@@ -99,13 +99,17 @@ const Hero = () => {
               Blindamos operações B2B complexas com engenharia jurídica sênior e automação de última geração. Sua conformidade como ativo estratégico.
             </p>
             
-            <div style={{ display: 'flex', gap: '20px' }} className="hero-btns">
-              <RefinedButton variant="primary" className="hero-btn">
-                Agendar Avaliação <ChevronRight size={18} />
-              </RefinedButton>
-              <RefinedButton variant="outline" className="hero-btn">
-                Ver Plataforma
-              </RefinedButton>
+            <div style={{ display: 'flex', gap: '24px' }} className="hero-btns">
+              <Magnetic>
+                <RefinedButton variant="primary" className="hero-btn">
+                  Agendar Avaliação <ChevronRight size={18} />
+                </RefinedButton>
+              </Magnetic>
+              <Magnetic>
+                <RefinedButton variant="outline" className="hero-btn">
+                  Ver Plataforma
+                </RefinedButton>
+              </Magnetic>
             </div>
 
             <div style={{ marginTop: '80px', display: 'flex', gap: '60px' }}>

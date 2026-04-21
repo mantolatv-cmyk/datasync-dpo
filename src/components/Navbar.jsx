@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, Menu, X } from 'lucide-react';
+import Magnetic from './Magnetic';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -8,7 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -24,13 +25,16 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled ? 'py-4' : 'py-8'
       }`}
       style={{
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        background: scrolled ? 'rgba(2, 6, 9, 0.4)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(20px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
       }}
     >
       <div 
@@ -40,30 +44,33 @@ const Navbar = () => {
           justifyContent: 'space-between', 
           alignItems: 'center',
           padding: scrolled ? '12px 32px' : '0 48px',
-          borderRadius: scrolled ? '20px' : '0',
-          transition: 'all 0.5s ease',
+          borderRadius: scrolled ? '24px' : '0',
+          transition: 'all 0.6s var(--spring-easing)',
           margin: scrolled ? '0 20px' : '0 auto',
           maxWidth: scrolled ? '1200px' : '100%',
-          border: scrolled ? '1px solid rgba(255,255,255,0.08)' : '1px solid transparent'
+          border: scrolled ? '1px solid rgba(255,255,255,0.08)' : '1px solid transparent',
+          boxShadow: scrolled ? '0 20px 40px rgba(0,0,0,0.4)' : 'none'
         }}
       >
-        <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '16px', textDecoration: 'none' }}>
-          <motion.div
-            whileHover={{ rotate: 15, scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          >
-            <Shield color="#00F2FF" size={40} />
-          </motion.div>
-          <span style={{ 
-            fontSize: '1.8rem', 
-            fontWeight: 800, 
-            fontFamily: 'var(--font-heading)',
-            color: '#FFF',
-            letterSpacing: '-1px'
-          }}>
-            DataSync
-          </span>
-        </a>
+        <Magnetic>
+          <a href="#home" style={{ display: 'flex', alignItems: 'center', gap: '16px', textDecoration: 'none' }}>
+            <motion.div
+              whileHover={{ rotate: 15, scale: 1.1 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <Shield color="#00F2FF" size={32} />
+            </motion.div>
+            <span style={{ 
+              fontSize: '1.6rem', 
+              fontWeight: 800, 
+              fontFamily: 'var(--font-heading)',
+              color: '#FFF',
+              letterSpacing: '-1px'
+            }}>
+              DataSync
+            </span>
+          </a>
+        </Magnetic>
 
         {/* Desktop Links */}
         <div style={{ display: 'none', gap: '56px', marginLeft: '64px' }} className="desktop-menu">
