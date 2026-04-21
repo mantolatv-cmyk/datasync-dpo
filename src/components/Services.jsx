@@ -70,7 +70,8 @@ const Services = () => {
       title: "Vendor Risk Audit",
       icon: <Globe size={24} />,
       desc: "Auditoria técnica de terceiros para garantir a integridade da sua cadeia de suprimentos.",
-      category: "Cadeia B2B"
+      category: "Cadeia B2B",
+      link: "https://datasync-assincrono.vercel.app/"
     },
     {
       title: "M&A Due Diligence",
@@ -139,12 +140,13 @@ const Services = () => {
               </p>
               
               <motion.a 
-                href="#contact" 
+                href={service.link || "#contact"} 
                 whileHover={{ x: 10 }}
                 style={{ color: '#FFF', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}
               >
                 Explorar Serviço <span style={{ color: 'var(--accent-cyan)', fontSize: '1.2rem' }}>→</span>
               </motion.a>
+
             </MagicCard>
           ))}
         </div>
