@@ -107,7 +107,11 @@ const Hero = () => {
                 </RefinedButton>
               </Magnetic>
               <Magnetic>
-                <RefinedButton variant="outline" className="hero-btn">
+                <RefinedButton 
+                  variant="outline" 
+                  className="hero-btn"
+                  onClick={() => window.open('https://datasync-portaldocliente.vercel.app/', '_blank')}
+                >
                   Ver Plataforma
                 </RefinedButton>
               </Magnetic>
