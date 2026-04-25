@@ -121,12 +121,12 @@ const Hero = () => {
               </Magnetic>
             </div>
 
-            <div style={{ marginTop: '80px', display: 'flex', gap: '60px' }}>
+            <div style={{ marginTop: '80px', display: 'flex', gap: '60px' }} className="hero-stats">
                <div>
                   <div style={{ fontSize: '1.5rem', fontWeight: 700, fontFamily: 'var(--font-heading)' }}>100+</div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '1px' }}>Operações Blindadas</div>
                </div>
-               <div style={{ width: '1px', height: '40px', background: 'rgba(255,255,255,0.1)' }} />
+               <div style={{ width: '1px', height: '40px', background: 'rgba(255,255,255,0.1)' }} className="divider" />
                <div>
                   <div style={{ fontSize: '1.5rem', fontWeight: 700, fontFamily: 'var(--font-heading)' }}>Privacy<span style={{ color: 'var(--accent-cyan)' }}>Ops</span></div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '1px' }}>Metodologia Própria</div>
@@ -186,15 +186,19 @@ const Hero = () => {
 
       <style>{`
         @media (max-width: 1024px) {
-          .hero-title { font-size: 3rem !important; }
-          .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
-          .hero-grid p { margin-left: auto; margin-right: auto; }
+          .hero-title { font-size: 3.2rem !important; }
+          .hero-grid { grid-template-columns: 1fr !important; text-align: center; gap: 40px !important; }
+          .hero-grid p { margin-left: auto; margin-right: auto; font-size: 1.1rem !important; }
           .hero-grid div { justify-content: center; }
-          .hero-btns { flex-direction: column !important; width: 100%; max-width: 400px; margin: 0 auto; }
-          .hero-btn { width: 100% !important; }
+          .hero-btns { flex-direction: column !important; width: 100%; max-width: 400px; margin: 0 auto; gap: 16px !important; }
+          .hero-btn { width: 100% !important; justify-content: center; }
+          .hero-stats { flex-direction: column !important; gap: 32px !important; align-items: center !important; margin-top: 40px !important; }
+          .hero-stats div { text-align: center !important; }
+          .hero-stats .divider { display: none !important; }
         }
         @media (max-width: 480px) {
-          .hero-title { font-size: 2.8rem !important; }
+          .hero-title { font-size: 2.4rem !important; }
+          .hero-grid { padding-top: 40px !important; }
         }
       `}</style>
     </section>

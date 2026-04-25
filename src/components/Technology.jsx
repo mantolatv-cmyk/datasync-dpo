@@ -21,14 +21,14 @@ const Technology = () => {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '100px', alignItems: 'center' }} className="tech-split">
           
-          <div className="glass-cyan" style={{ 
+          <div className="glass-cyan tech-card" style={{ 
             padding: '40px', 
             borderRadius: '24px', 
             background: 'var(--bg-deep)',
             boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
             border: '1px solid var(--border-cyan)'
           }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }} className="tech-card-header">
               <div style={{ display: 'flex', gap: '8px' }}>
                 <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#FF5F56' }}></div>
                 <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#FFBD2E' }}></div>
@@ -93,9 +93,16 @@ const Technology = () => {
         </div>
       </div>
       <style>{`
-        @media (max-width: 992px) {
-          .tech-split { grid-template-columns: 1fr !important; gap: 60px !important; }
-          .tech-features { grid-template-columns: 1fr !important; }
+        @media (max-width: 1024px) {
+          .tech-split { grid-template-columns: 1fr !important; gap: 48px !important; }
+          .tech-split h2 { font-size: 2.8rem !important; }
+          .tech-card { padding: 32px !important; }
+          .tech-features { grid-template-columns: 1fr !important; gap: 32px !important; }
+        }
+        @media (max-width: 640px) {
+          .tech-split h2 { font-size: 2.2rem !important; }
+          .tech-card { padding: 24px !important; }
+          .tech-card-header { margin-bottom: 24px !important; }
         }
       `}</style>
     </section>

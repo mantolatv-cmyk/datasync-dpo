@@ -44,6 +44,7 @@ const FAQItem = ({ question, answer, icon, isOpen, onClick }) => {
     >
       <button
         onClick={onClick}
+        className="faq-item-btn"
         style={{
           width: '100%',
           padding: '24px 32px',
@@ -70,12 +71,15 @@ const FAQItem = ({ question, answer, icon, isOpen, onClick }) => {
           }}>
             {icon}
           </div>
-          <span style={{ 
-            fontSize: '1.25rem', 
-            fontWeight: 600, 
-            fontFamily: 'var(--font-heading)',
-            letterSpacing: '-0.02em'
-          }}>
+          <span 
+            className="faq-item-title"
+            style={{ 
+              fontSize: '1.25rem', 
+              fontWeight: 600, 
+              fontFamily: 'var(--font-heading)',
+              letterSpacing: '-0.02em'
+            }}
+          >
             {question}
           </span>
         </div>
@@ -92,12 +96,15 @@ const FAQItem = ({ question, answer, icon, isOpen, onClick }) => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div style={{ 
-              padding: '0 32px 32px 92px', 
-              color: 'var(--text-secondary)',
-              fontSize: '1.1rem',
-              lineHeight: '1.7'
-            }}>
+            <div 
+              className="faq-item-content"
+              style={{ 
+                padding: '0 32px 32px 92px', 
+                color: 'var(--text-secondary)',
+                fontSize: '1.1rem',
+                lineHeight: '1.7'
+              }}
+            >
               {answer}
             </div>
           </motion.div>
@@ -111,9 +118,9 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" style={{ position: 'relative' }}>
+    <section id="faq" style={{ position: 'relative' }} className="section-padding">
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '80px' }} className="faq-header">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -161,6 +168,19 @@ const FAQ = () => {
         zIndex: -1,
         pointerEvents: 'none'
       }} />
+      <style>{`
+        @media (max-width: 1024px) {
+          .faq-header h2 { font-size: 2.8rem !important; }
+        }
+        @media (max-width: 640px) {
+          .faq-header h2 { font-size: 2.2rem !important; }
+          .faq-header p { font-size: 1.1rem !important; }
+          /* FAQ Item internal padding */
+          .faq-item-btn { padding: 20px 24px !important; }
+          .faq-item-content { padding: 0 24px 24px 24px !important; }
+          .faq-item-title { font-size: 1.1rem !important; }
+        }
+      `}</style>
     </section>
   );
 };

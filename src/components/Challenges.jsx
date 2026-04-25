@@ -49,7 +49,7 @@ const Challenges = () => {
         
         {/* Desafio B2B Section */}
         <div style={{ marginBottom: '160px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '80px' }} className="challenge-header">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -63,8 +63,8 @@ const Challenges = () => {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '32px' }}>
-             <MagicCard>
+          <div className="challenge-grid">
+             <MagicCard className="challenge-card">
                 <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(255,95,86,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '32px' }}>
                   <AlertCircle color="#FF5F56" size={24} />
                 </div>
@@ -73,7 +73,7 @@ const Challenges = () => {
                   Grandes corporações e players multinacionais estão restringindo parceiros que não demonstram governança de dados auditável. Não se trata de medo de multas, mas de Sustentabilidade Comercial.
                 </p>
              </MagicCard>
-             <MagicCard>
+             <MagicCard className="challenge-card">
                 <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(0,242,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '32px' }}>
                   <ShieldCheck color="var(--accent-cyan)" size={24} />
                 </div>
@@ -86,13 +86,14 @@ const Challenges = () => {
         </div>
 
         {/* Solução DataSync (DPOaaS) */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '100px', alignItems: 'center' }} className="solution-layout">
-           <motion.div
-             initial={{ opacity: 0, x: -50 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-           >
+         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '100px', alignItems: 'center' }} className="solution-layout">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="solution-text"
+            >
               <span style={{ color: 'var(--accent-cyan)', fontWeight: 800, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '2px' }}>PrivacyOps Solutions</span>
               <h2 style={{ fontSize: '3.5rem', marginTop: '20px', marginBottom: '32px', lineHeight: 1.1 }}>
                 Inteligência <span className="text-gradient">Multidisciplinar.</span>
@@ -123,13 +124,13 @@ const Challenges = () => {
               </div>
            </motion.div>
 
-           <motion.div
-             initial={{ opacity: 0, scale: 0.9 }}
-             whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: true }}
-             className="glass"
-             style={{ padding: '80px 60px', borderRadius: '40px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)', background: 'radial-gradient(circle at center, rgba(0,242,255,0.03) 0%, transparent 100%)' }}
-           >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="glass solution-card"
+              style={{ padding: '80px 60px', borderRadius: '40px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)', background: 'radial-gradient(circle at center, rgba(0,242,255,0.03) 0%, transparent 100%)' }}
+            >
               <div style={{ marginBottom: '40px', display: 'flex', justifyContent: 'center' }}>
                 <ShieldCheck size={100} color="var(--accent-cyan)" strokeWidth={1.5} />
               </div>
@@ -149,8 +150,22 @@ const Challenges = () => {
 
       </div>
       <style>{`
-        @media (max-width: 992px) {
+        .challenge-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 32px;
+        }
+        @media (max-width: 1024px) {
+          .challenge-card { padding: 40px 32px !important; }
           .solution-layout { grid-template-columns: 1fr !important; gap: 60px !important; }
+          .challenge-header h2 { font-size: 2.8rem !important; }
+          .solution-text h2 { font-size: 2.8rem !important; }
+        }
+        @media (max-width: 640px) {
+          .challenge-grid { grid-template-columns: 1fr !important; }
+          .challenge-header h2 { font-size: 2.2rem !important; }
+          .solution-text h2 { font-size: 2.2rem !important; }
+          .solution-card { padding: 60px 40px !important; }
         }
       `}</style>
     </section>

@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Globe, FileSearch, Users, Activity, Briefcase, Database, Zap } from 'lucide-react';
 
-const MagicCard = ({ children, index }) => {
+const MagicCard = ({ children, index, className = '' }) => {
   const cardRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -23,7 +23,7 @@ const MagicCard = ({ children, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="glass"
+      className={`glass ${className}`}
       style={{ 
         padding: '48px', 
         borderRadius: '32px',
@@ -116,7 +116,7 @@ const Services = () => {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '32px' }}>
           {services.map((service, index) => (
-            <MagicCard key={index} index={index}>
+            <MagicCard key={index} index={index} className="service-card">
               <div style={{ 
                 background: 'linear-gradient(135deg, rgba(0,242,255,0.1), transparent)', 
                 width: '60px', 
@@ -152,8 +152,15 @@ const Services = () => {
         </div>
       </div>
       <style>{`
-        @media (max-width: 992px) {
+        @media (max-width: 1024px) {
           .services-header { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .services-header h2 { font-size: 2.8rem !important; }
+          .service-card { padding: 40px 32px !important; }
+        }
+        @media (max-width: 640px) {
+          .services-header h2 { font-size: 2.2rem !important; }
+          .service-card { padding: 32px 24px !important; }
+          .service-card h3 { font-size: 1.4rem !important; }
         }
       `}</style>
     </section>

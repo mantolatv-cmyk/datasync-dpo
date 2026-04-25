@@ -4,9 +4,9 @@ import { Mail, Send } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section id="contact">
+    <section id="contact" className="section-padding">
       <div className="container">
-        <div className="glass-cyan" style={{ 
+        <div className="glass-cyan contact-card" style={{ 
           padding: '80px 40px', 
           borderRadius: '40px', 
           background: 'linear-gradient(135deg, var(--bg-surface) 0%, #08101a 100%)',
@@ -95,8 +95,15 @@ const Contact = () => {
         </div>
       </div>
       <style>{`
-        @media (max-width: 600px) {
-          .form-row { grid-template-columns: 1fr !important; }
+        @media (max-width: 1024px) {
+          .contact-card { padding: 60px 32px !important; }
+          .contact-card h2 { font-size: 2.5rem !important; }
+        }
+        @media (max-width: 640px) {
+          .form-row { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .contact-card h2 { font-size: 1.8rem !important; }
+          .contact-card p { font-size: 1rem !important; }
+          .contact-card { padding: 40px 20px !important; border-radius: 24px !important; }
         }
       `}</style>
     </section>
